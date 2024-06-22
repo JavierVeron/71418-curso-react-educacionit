@@ -1,11 +1,13 @@
 import { Link, useParams, useSearchParams } from "react-router-dom"
 import arrayProductos from "./json/arrayProductos.json"
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { CartContext } from "../Clase5/context/CartContext";
 
 const PaginaPrincipal = () => {
     const [items, setItems] = useState(arrayProductos);
     const {id} = useParams();
     const [filtrar, setFiltrar] = useSearchParams();
+    const {cart, agregarProducto, cantTotalProductos} = useContext(CartContext);
 
     const filtrarClasicos = filtrar.get("clasicos");
     const filtrarSexo = filtrar.get("sexo");
@@ -37,6 +39,7 @@ const PaginaPrincipal = () => {
                                 <div className="card-body">
                                     <p className="card-title"><b>{item.nombre}</b></p>
                                     <p className="card-title">${item.precio}</p>
+                                    <p><button className="btn text-white bg-dark" onClick={() => {agregarProducto(item.id)}}>Agregar (+)</button></p>
                                 </div>
                             </div>
                         </div>

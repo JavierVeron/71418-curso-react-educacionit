@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom"
+import { CartContext } from "../Clase5/context/CartContext"
+import { useContext } from "react"
+
 
 const NavBar = () => {
+    const {cantTotalProductos} = useContext(CartContext);
+
     return (
         <>
             <div className="container my-5">
@@ -25,6 +30,9 @@ const NavBar = () => {
                             </li>
                             <li className="nav-item">
                                 <Link to={"/color/negras"} className="nav-link text-dark">Zapatillas Negras</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to={"/carrito"} className="nav-link text-dark">Carrito ({cantTotalProductos()}) 🛒</Link>
                             </li>
                         </ul>
                     </div>

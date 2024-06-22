@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import arrayProductos from "./json/arrayProductos.json"
 import { useParams } from "react-router-dom";
+import { CartContext } from "../Clase5/context/CartContext";
 
 const Producto = () => {
     const [item, setItem] = useState("");
     const [productoError, setProductoError] = useState(false);
     const {id} = useParams();
+    const {agregarProducto} = useContext(CartContext);
 
     useEffect(() => {
         let producto = arrayProductos.find(item => item.id == id);
@@ -29,6 +31,7 @@ const Producto = () => {
                         <h1>{item.nombre}</h1>
                         <h3 className="text-danger">${item.precio}</h3>
                         <p>Color: <b>{item.color}</b></p>
+                        <p><button className="btn text-white bg-dark" onClick={() => {agregarProducto(item.id)}}>Agregar (+)</button></p>
                     </div>
                 </div>
             </div>

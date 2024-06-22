@@ -5,18 +5,25 @@ import GuiaDeEstilos from './Clase4/GuiaDeEstilos'
 import Producto from './Clase4/Producto'
 import NavBar from './Clase4/NavBar'
 import Error404 from './Clase4/Error404'
+import CartProvider from './Clase5/context/CartContext'
+import Carrito from './Clase5/Carrito'
+import Usuarios from './Clase5/Usuarios'
 
 function App() {
   return (
     <>
-      <NavBar />
-      <Routes>
-        <Route path={"/"} element={<PaginaPrincipal />} />
-        <Route path={"/guia-de-estilos"} element={<GuiaDeEstilos />} />
-        <Route path={"/color/:id"} element={<PaginaPrincipal />} />
-        <Route path={"/producto/:id"} element={<Producto />} />
-        <Route path={"*"} element={<Error404 />} />
-      </Routes>
+      <CartProvider>
+        <NavBar />
+        <Routes>
+          <Route path={"/"} element={<PaginaPrincipal />} />
+          <Route path={"/guia-de-estilos"} element={<GuiaDeEstilos />} />
+          <Route path={"/color/:id"} element={<PaginaPrincipal />} />
+          <Route path={"/producto/:id"} element={<Producto />} />
+          <Route path={"/carrito"} element={<Carrito />} />
+          <Route path={"/usuarios"} element={<Usuarios />} />
+          <Route path={"*"} element={<Error404 />} />
+        </Routes>
+      </CartProvider>
     </>
   )
 }
