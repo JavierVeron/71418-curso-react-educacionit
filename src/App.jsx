@@ -9,7 +9,9 @@ import CartProvider from './Clase5/context/CartContext'
 import Carrito from './Clase5/Carrito'
 import Usuarios from './Clase5/Usuarios'
 /* import ApiFetch from './Clase6/ApiFetch' */
-import ApiAxios from './Clase6/ApiAxios'
+/* import ApiAxios from './Clase6/ApiAxios' */
+/* import Contador from './Clase7/Contador' */
+import Tareas from './Clase7/Tareas'
 /* import ApiXML from './Clase6/ApiXML' */
 
 function App() {
@@ -18,7 +20,7 @@ function App() {
       <CartProvider>
         <NavBar />
         <Routes>
-          <Route path={"/"} element={<ApiAxios />} />
+          <Route path={"/"} element={<Tareas />} />
           <Route path={"/guia-de-estilos"} element={<GuiaDeEstilos />} />
           <Route path={"/color/:id"} element={<PaginaPrincipal />} />
           <Route path={"/producto/:id"} element={<Producto />} />
