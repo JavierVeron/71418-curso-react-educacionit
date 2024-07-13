@@ -1,0 +1,8 @@
+[
+    {"id":1, "nombre":"ZapatillasU OLD SKOOL (Blancas)", "imagen":"https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2023/2/7/8077326.jpg", "precio":122000, "color":"blancas", "clasicas":"false", "sexo":"f"},
+    {"id":2, "nombre":"ZapatillasU OLD SKOOL (Clasicas)", "imagen":"https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2023/2/7/8077347.jpg", "precio":122000, "color":"negras", "clasicas":"true", "sexo":"u"},
+    {"id":3, "nombre":"ZapatillasU OLD SKOOL (Negras)", "imagen":"https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2023/2/7/8077285.jpg", "precio":122000, "color":"negras", "clasicas":"false", "sexo":"u"},
+    {"id":4, "nombre":"ZapatillasU SK8-HI (Clasicas)", "imagen":"https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2023/2/13/8093534.jpg", "precio":139000, "color":"negras", "clasicas":"true", "sexo":"u"},
+    {"id":5, "nombre":"ZapatillasU SK8-HI (Negras)", "imagen":"https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2023/2/13/8093554.jpg", "precio":139000, "color":"negras", "clasicas":"false", "sexo":"m"},
+    {"id":6, "nombre":"ZapatillasU SK8-HI (Rojas)", "imagen":"https://mmgrim2.azureedge.net/MediaFiles/Grimoldi/2024/4/11/9522441.jpg", "precio":139000, "color":"rojas", "clasicas":"false", "sexo":"f"}
+]

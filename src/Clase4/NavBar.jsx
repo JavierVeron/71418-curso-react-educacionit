@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom"
-import { CartContext } from "../Clase5/context/CartContext"
-import { useContext } from "react"
-
+import { useSelector } from "react-redux";
 
 const NavBar = () => {
-    const {cantTotalProductos} = useContext(CartContext);
+    const cart = useSelector(state => state.cart);
+    const cantTotalProductos = cart.length;
 
     return (
         <>
@@ -32,7 +31,7 @@ const NavBar = () => {
                                 <Link to={"/color/negras"} className="nav-link text-dark">Zapatillas Negras</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to={"/carrito"} className="nav-link text-dark">Carrito ({cantTotalProductos()}) 🛒</Link>
+                                <Link to={"/cart"} className="nav-link text-dark">Carrito ({cantTotalProductos}) 🛒</Link>
                             </li>
                         </ul>
                     </div>
