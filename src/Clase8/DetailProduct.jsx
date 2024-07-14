@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from "react-redux"
 import { useParams } from "react-router-dom";
-import { actions } from "./redux/actions";
 import CuotasProduct from "./CuotasProduct";
 
 const DetailProduct = () => {

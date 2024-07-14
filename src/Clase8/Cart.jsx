@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux"
 
 const Cart = () => {
     const cart = useSelector(state => state.cart);
+    const sumCart = useSelector(state => state.sumCart);
     const dispatch = useDispatch();
 
     const vaciarCarrito = () => {
@@ -32,7 +33,7 @@ const Cart = () => {
                     <table className="table">
                         <tbody>
                             <tr>
-                                <td colSpan={5} className="align-middle text-end"><button className="btn btn-danger" title="Vaciar Carrito" onClick={() => {vaciarCarrito()}}>Vaciar Carrito 🧹</button></td>
+                                <td colSpan={5} className="align-middle text-end"><button className="btn btn-sm btn-dark" title="Vaciar Carrito" onClick={() => {vaciarCarrito()}}>Vaciar Carrito 🛒</button></td>
                             </tr>
                             {
                                 cart.map(item => (
@@ -41,10 +42,15 @@ const Cart = () => {
                                         <td className="align-middle">{item.nombre}</td>
                                         <td className="align-middle">$ {item.precio} X {item.cantidad}</td>
                                         <td className="align-middle">$ {item.precio * item.cantidad}</td>
-                                        <td className="align-middle text-end"><button className="btn btn-danger" title="Eliminar Producto" onClick={() => {quitarProductoDelCarrito(item.id)}}>Eliminar 🚮</button></td>
+                                        <td className="align-middle text-end"><button className="btn btn-sm btn-dark" title="Eliminar Producto" onClick={() => {quitarProductoDelCarrito(item.id)}}>Eliminar ❌</button></td>
                                     </tr>
                                 ))
                             }
+                            <tr>
+                                <td colSpan={3} className="align-middle">Suma Total</td>
+                                <td className="align-middle"><b>$ {sumCart}</b></td>
+                                <td>&nbsp;</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

@@ -2,8 +2,7 @@ import { Link } from "react-router-dom"
 import { useSelector } from "react-redux";
 
 const NavBar = () => {
-    const cart = useSelector(state => state.cart);
-    const cantTotalProductos = cart.length;
+    const totalCart = useSelector(state => state.totalCart);
 
     return (
         <>
@@ -31,7 +30,7 @@ const NavBar = () => {
                                 <Link to={"/color/negras"} className="nav-link text-dark">Zapatillas Negras</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to={"/cart"} className="nav-link text-dark">Carrito ({cantTotalProductos}) 🛒</Link>
+                                <Link to={"/cart"} className="nav-link text-dark">Carrito ({totalCart}) 🛒</Link>
                             </li>
                         </ul>
                     </div>
