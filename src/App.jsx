@@ -5,6 +5,7 @@ import Error404 from './Clase4/Error404'
 import ProductList from './Clase8/ProductList'
 import DetailProduct from './Clase8/DetailProduct'
 import Cart from './Clase8/Cart'
+import ReduxSagaComp from './Clase9/ReduxSagaComp'
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path={"/"} element={<ProductList />} />
+          <Route path={"/"} element={<ReduxSagaComp />} />
           <Route path={"/color/:id"} element={<ProductList />} />
           <Route path={"/product/:id"} element={<DetailProduct />} />
           <Route path={"/cart"} element={<Cart />} />
