@@ -4,27 +4,23 @@ export const DECREMENTAR = 'DECREMENTAR';
 export const INCREMENTAR_ASYNC = 'INCREMENTAR_ASYNC';
 export const DECREMENTAR_ASYNC = 'DECREMENTAR_ASYNC';
 
-export const onIncrementarAsync = (valor) => ({
+export const onIncrementarAsync = ({response}) => ({
     type:INCREMENTAR_ASYNC,
-    payload:valor
+    response
 })
 
-export const onDecrementarAsync = (valor) => ({
+export const onDecrementarAsync = ({response}) => ({
     type:DECREMENTAR_ASYNC,
-    payload:valor
+    response
 })
 
 // Reducer
 function CounterReducer(state = 0, action) {
     switch(action.type) {
         case INCREMENTAR:
-            return {
-                state: state + action.payload
-            }
+            return state + action.response;
         case DECREMENTAR:
-            return {
-                state: state - action.payload
-            }
+            return state - action.response;
         default:
             return state;
     }

@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware } from "redux"
 import { thunk } from "redux-thunk"
 import arrayProductos from "../json/arrayProductos.json"
+import { useDispatch } from "react-redux"
 
 const initialStore = {
     products:arrayProductos,
@@ -8,6 +9,8 @@ const initialStore = {
     totalCart:0,
     sumCart:0
 }
+
+const dispatch = useDispatch();
 
 /* const Logging = store => next => action => {
     const fecha = new Date();
@@ -24,8 +27,6 @@ const thunkFunction = () => (dispatch) => {
     console.log(`Hora: ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`);
     //return next(action);
 }
-
-//thunk(thunkFunction);
 
 const CartReducer = (state = initialStore, action) => {
     let updatedCart = [];
@@ -83,3 +84,4 @@ const CartReducer = (state = initialStore, action) => {
 }
 
 export const store = createStore(CartReducer, applyMiddleware(thunk))
+store.dispatch(thunkFunction());

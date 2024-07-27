@@ -4,15 +4,16 @@ import { onIncrementarAsync, onDecrementarAsync } from "./redux/CounterReducer";
 const ReduxSagaComp = () => {
     const contador = useSelector(state => state);
     const dispatch = useDispatch();
+    const valor = 1;
 
     const incrementar = () => {
         console.log("Incremento...");
-        dispatch(onIncrementarAsync(1));
+        dispatch(onIncrementarAsync({valor}));
     }
 
     const decrementar = () => {
         console.log("Decremento...");
-        dispatch(onDecrementarAsync(1));
+        dispatch(onDecrementarAsync({valor}));
     }
 
     return (

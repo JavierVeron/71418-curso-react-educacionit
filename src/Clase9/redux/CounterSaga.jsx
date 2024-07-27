@@ -5,25 +5,26 @@ import { INCREMENTAR, DECREMENTAR, INCREMENTAR_ASYNC, DECREMENTAR_ASYNC } from "
 const API = (valor) => {
     return new Promise((resolve) => {
         setTimeout(() => {
+            console.log("Valor", valor);
             resolve(valor)
         }, 2000)
     })
 }
 
 // Workers de las Acciones
-function * incrementarAsync(valor) {
+function * incrementarAsync({valor}) {
     const response = yield call(API, valor);
     yield put ({
-        action:INCREMENTAR,
-        payload:response
+        type:INCREMENTAR,
+        response,
     });
 }
 
-function * decrementarAsync(valor) {
+function * decrementarAsync({valor}) {
     const response = yield call(API, valor);
     yield put ({
-        action:DECREMENTAR,
-        payload:response
+        type:DECREMENTAR,
+        response,
     });
 }
 
@@ -38,5 +39,5 @@ function * watcherDecrementarAsync() {
 
 // Root Saga
 export function * rootSaga() {
-    yield all([watcherIncrementarAsync, watcherDecrementarAsync]);
+    yield all([watcherIncrementarAsync(), watcherDecrementarAsync()]);
 }
